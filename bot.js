@@ -1,51 +1,53 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+var maps;
 
 client.on('ready', () => {
   console.log('I am ready!');
   });
   
   client.on('message',message => {
-    if(message.content === '!startVeto') {
-    message.reply('VetoStarting');
-      //VetoStart();
+    if(message.content === '!startVeto' || message.content === '!resetVeto') {
+      message.reply('VetoStarting');
+      maps = ['cobble','cache', 'inferno','mirage','nuke','overpass','train'];
     }
  });
  
  client.login(process.env.BOT_TOKEN);
 
 
-function VetoStart()
-{ 
-  var maps = ['cobble','cache', 'inferno','mirage','nuke','overpass','train'];
+function remove(array, element) {
+  return array.filter(e => e !== element);
+}
+
   message.reply("Pick a map to remove: " + maps);
   
   client.on('message',message => {
     if(message.content === '!r cobble') {
-      message.reply('Cobble removed');
       maps = remove(maps,'cobble');
+      message.reply('Cobblestone removed. Maps left: ' + maps);
     }
  });
 
   client.on('message',message => {
     if(message.content === '!r cache') {
-      message.reply('Cache removed');
       maps = remove(maps,'cache');
+      message.reply('Cache removed. Maps left: ' + maps);
     }
  });
   
   client.on('message',message => {
     if(message.content === '!r mirage') {
-      message.reply('Mirage removed');
       maps = remove(maps,'mirage');
+      message.reply('Mirage removed. Maps left: ' + maps);
     }
  });
   
     
   client.on('message',message => {
     if(message.content === '!r nuke') {
-      message.reply('Nuke removed');
       maps = remove(maps,'nuke');
+      message.reply('Nuke removed. Maps left: ' + maps);
     }
  });
 
@@ -53,38 +55,28 @@ function VetoStart()
 
   client.on('message',message => {
     if(message.content === '!r overpass') {
-      message.reply('Overpass removed');
       maps = remove(maps,'overpass');
+      message.reply('Overpass removed. Maps left: ' + maps);
     }
  });
 
 
   client.on('message',message => {
     if(message.content === '!r train') {
-      message.reply('train removed');
       maps = remove(maps,'train');
+      message.reply('Train removed. Maps left: ' + maps);
     }
  });
-
-
 
 
   client.on('message',message => {
     if(message.content === '!r inferno') {
-      message.reply('inferno removed');
       maps = remove(maps,'inferno');
+      message.reply('inferno removed. Maps left: ' + maps);
     }
  });
 
 
-  if(maps.length==1)
-  {
-    return maps;
-  }
-
 }
 
-
-function remove(array, element) {
-  return array.filter(e => e !== element);
 }

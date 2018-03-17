@@ -8,7 +8,7 @@ client.on('ready', () => {
   client.on('message',message => {
     if(message.content === '!startVeto') {
     message.reply('VetoStarting');
-      VetoStart();
+      //VetoStart();
     }
  });
  

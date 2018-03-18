@@ -5,6 +5,7 @@ var mapsLeft;
 var allowBan = false;
 
 var items = ['cache','cobble','inferno','mirage','nuke','overpass','train'];
+var PFitems = ['cache','cobble','inferno','mirage','nuke','overpass','train','subzero','dust2','canals'];
 
 
 client.on('ready', () => {
@@ -141,8 +142,16 @@ client.on('message', message => {
 
 
 client.on('message',message=> {
-    if(message.content === '!randomMap') {
+    if(message.content.toLowerCase() === '!randommap' || message.content.toLowerCase() === '!random map' ) {
      message.reply( items[Math.floor(Math.random()*items.length)] );
+    }
+});
+
+
+
+client.on('message',message=> {
+    if(message.content.toLowerCase() === '!randompopflashmap' || message.content.toLowerCase() === '!random popflash map' ) {
+     message.reply( PFitems[Math.floor(Math.random()*PFitems.length)] );
     }
 });
 

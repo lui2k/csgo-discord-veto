@@ -8,7 +8,7 @@ client.on('ready', () => {
 
 
 client.on('message', message => {
-    if (message.content.toLowerCase() === '!mapveto' || message.content.toLowerCase() === '!map veto) {
+    if (message.content.toLowerCase() === '!mapveto' || message.content.toLowerCase() === '!map veto') {
         message.reply('Enter !ActiveDutyVeto  OR  !PopflashVeto');
     }
 });

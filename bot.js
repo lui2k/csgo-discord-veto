@@ -42,16 +42,16 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content.toLowerCase() === '!r cache' && maps.indexOf('cache')!= -1) {
         maps = maps.replace('cache, ', '');
-        message.reply('Cache removed. Maps left: ' + maps);
         mapsLeft = maps.split(",").length;
+        message.reply('Cache removed. Maps left: ' + maps + " ("+mapsLeft +")"; );
     }
 });
 
 client.on('message', message => {
     if (message.content.toLowerCase() === '!r mirage' && maps.indexOf('mirage')!= -1) {
         maps = maps.replace('mirage, ', '');
-        message.reply('Mirage removed. Maps left: ' + maps);
         mapsLeft = maps.split(",").length;
+        message.reply('Mirage removed. Maps left: ' + maps + " ("+mapsLeft +")"; );
     }
 });
 

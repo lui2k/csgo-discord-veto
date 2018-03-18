@@ -18,11 +18,7 @@ client.on('message', message => {
         mapsLeft = 50;
     }
 });
-client.on('message', message => {
-    if (message.content === '!vetoServerCount') {
-        message.reply(self.bot.servers.length);
-    }
-});
+
 
 client.on('message', message => {
     if (message.content.toLowerCase() === '!mapsleft') {

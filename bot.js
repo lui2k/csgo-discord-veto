@@ -4,6 +4,9 @@ var maps;
 var mapsLeft;
 var allowBan = false;
 
+var items = ['cache','cobble','inferno','mirage','nuke','overpass','train'];
+
+
 client.on('ready', () => {
     console.log('I am ready!');
 });
@@ -17,7 +20,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-    if (message.content.toLowerCase() === '!mapsLeft') {
+    if (message.content.toLowerCase() === '!mapsleft') {
         message.reply("Maps left: "+maps + " ("+mapsLeft - 1+")");
     }
 });

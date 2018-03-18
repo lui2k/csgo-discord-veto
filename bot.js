@@ -43,7 +43,7 @@ client.on('message', message => {
     if (message.content.toLowerCase() === '!r cache' && maps.indexOf('cache')!= -1) {
         maps = maps.replace('cache, ', '');
         mapsLeft = maps.split(",").length;
-        message.reply('Cache removed. Maps left: ' + maps + " ("+mapsLeft +")"; );
+        message.reply('Cache removed. Maps left: ' + maps + " ("+mapsLeft +")");
     }
 });
 
@@ -51,7 +51,7 @@ client.on('message', message => {
     if (message.content.toLowerCase() === '!r mirage' && maps.indexOf('mirage')!= -1) {
         maps = maps.replace('mirage, ', '');
         mapsLeft = maps.split(",").length;
-        message.reply('Mirage removed. Maps left: ' + maps + " ("+mapsLeft +")"; );
+        message.reply('Mirage removed. Maps left: ' + maps + " ("+mapsLeft +")");
     }
 });
 

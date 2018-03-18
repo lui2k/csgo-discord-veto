@@ -30,7 +30,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-    if (message.content.toLowerCase() === '!r cache' && maps.indexOf('cache')!= -1 {
+    if (message.content.toLowerCase() === '!r cache' && maps.indexOf('cache')!= -1) {
         maps = maps.replace('cache, ', '');
         message.reply('Cache removed. Maps left: ' + maps);
     }

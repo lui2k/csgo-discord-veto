@@ -22,9 +22,6 @@ client.on('message', message => {
     }
 });
 
-client.login(process.env.BOT_TOKEN);
-
-
 client.on('message', message => {
     if (message.content.toLowerCase() === '!r cobble' && maps.indexOf('cobble')!= -1) {
         maps = maps.replace('cobble, ', '');
@@ -86,3 +83,6 @@ client.on('message',message=> {
      message.reply( items[Math.floor(Math.random()*items.length)] );
     }
 });
+
+
+client.login(process.env.BOT_TOKEN);

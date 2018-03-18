@@ -5,7 +5,7 @@ Discord bot for CSGO Vetos <br />
 # commands
 !startVeto   - Starts Veto <br />
 !resetVeto   - Clears the existing veto, and restarts <br />
-!r <map>     - Removes the map from the current Map list <br />
+!r mapName     - Removes the map from the current Map list <br />
 !randomMap   - Selects a random Map from the current Map list <br />
   
   

@@ -18,7 +18,7 @@ client.login(process.env.BOT_TOKEN);
 
 
 client.on('message', message => {
-    if (message.content === '!r cobble') {
+    if (message.content === '!r cobble' && maps.indexOf('cobble')!= -1) {
         maps = maps.replace('cobble, ', '');
         message.reply('Cobblestone removed. Maps left: ' + maps);
     }

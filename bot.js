@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 var maps;
+var items = ['cache','cobblestone','mirage','inferno','nuke','overpass','train'];
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -67,5 +68,11 @@ client.on('message', message => {
     if (message.content === '!r inferno') {
         maps = maps.replace('inferno, ', '');
         message.reply('inferno removed. Maps left: ' + maps);
+    }
+});
+
+client.on('message',message=> {
+    if(message.content === '!randomMap') {
+     message.reply( items[Math.floor(Math.random()*items.length)] );
     }
 });

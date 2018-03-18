@@ -6,26 +6,24 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
+
 client.on('message', message => {
-    if (message.content === '!ActiveDutyVeto') {
+    if (message.content.toLowerCase() === '!mapveto' || message.content.toLowerCase() === '!map veto) {
+        message.reply('Enter !ActiveDutyVeto  OR  !PopflashVeto');
+    }
+});
+
+client.on('message', message => {
+    if (message.content.toLowerCase() === '!activedutyveto') {
         message.reply('VetoStarting');
         maps = 'cobble, cache, inferno, mirage, nuke, overpass, train';
     }
 });
 
 client.on('message', message => {
-    if (message.content === '!PopflashVeto') {
+    if (message.content.toLowerCase() === '!popflashveto') {
         message.reply('VetoStarting');
         maps = 'subzero, dust2, canals, cobble, cache, inferno, mirage, nuke, overpass, train';
-    }
-});
-
-
-
-client.on('message', message => {
-    if (message.content === '!PopFlashVeto') {
-        message.reply('VetoStarting');
-        maps = 'cobble, cache, inferno, mirage, nuke, overpass, train', 'subzero','canals','dust2';
     }
 });
 

@@ -50,7 +50,6 @@ client.on('message', message => {
         maps = maps.replace('cobble, ', '');
         message.reply('Cobblestone removed. Maps left: ' + maps);
         mapsLeft = maps.split(",").length;
-        CheckMaps();
     }
 });
 
@@ -58,8 +57,7 @@ client.on('message', message => {
     if (message.content.toLowerCase() === '!r cache' && maps.indexOf('cache')!= -1 && allowBan) {
         maps = maps.replace('cache, ', '');
         mapsLeft = maps.split(",").length;
-        message.reply('Cache removed. Maps left: ' + maps + " ("+mapsLeft +")");
-        CheckMaps();
+        message.reply('Cache removed. Maps left: ' + maps);
     }
 });
 
@@ -67,8 +65,7 @@ client.on('message', message => {
     if (message.content.toLowerCase() === '!r mirage' && maps.indexOf('mirage')!= -1 && allowBan) {
         maps = maps.replace('mirage, ', '');
         mapsLeft = maps.split(",").length;
-        message.reply('Mirage removed. Maps left: ' + maps + " ("+mapsLeft +")");
-        CheckMaps();
+        message.reply('Mirage removed. Maps left: ' + maps);
     }
 });
 
@@ -78,7 +75,6 @@ client.on('message', message => {
         maps = maps.replace('nuke, ', '');
         message.reply('Nuke removed. Maps left: ' + maps);
         mapsLeft = maps.split(",").length;
-        CheckMaps();
     }
 });
 
@@ -89,7 +85,6 @@ client.on('message', message => {
         maps = maps.replace('overpass, ', '');
         message.reply('Overpass removed. Maps left: ' + maps);
         mapsLeft = maps.split(",").length;
-        CheckMaps();
     }
 });
 
@@ -99,7 +94,6 @@ client.on('message', message => {
         maps = maps.replace('train', '');
         message.reply('Train removed. Maps left: ' + maps);
         mapsLeft = maps.split(",").length;
-        CheckMaps();
     }
 });
 
@@ -109,7 +103,6 @@ client.on('message', message => {
         maps = maps.replace('inferno, ', '');
         message.reply('Inferno removed. Maps left: ' + maps);
         mapsLeft = maps.split(",").length;
-        CheckMaps();
     }
 });
 
@@ -119,7 +112,6 @@ client.on('message', message => {
         maps = maps.replace('canals, ', '');
         message.reply('Canals removed. Maps left: ' + maps);
         mapsLeft = maps.split(",").length;
-        CheckMaps();
     }
 });
 
@@ -128,7 +120,7 @@ client.on('message', message => {
         maps = maps.replace('subzero, ', '');
         message.reply('Subzero removed. Maps left: ' + maps);
         mapsLeft = maps.split(",").length;
-        CheckMaps();
+        
     }
 });
 
@@ -137,28 +129,15 @@ client.on('message', message => {
         maps = maps.replace('dust2, ', '');
         message.reply('Dust 2 removed. Maps left: ' + maps);
         mapsLeft = maps.split(",").length;
-        CheckMaps();
     }
 });
 client.on('message', message => {
     if (message.content.toLowerCase() === '!r dust 2' && maps.indexOf('dust2')!= -1 &&allowBan) {
         maps = maps.replace('dust2, ', '');
         message.reply('Dust 2 removed. Maps left: ' + maps);
-        mapsLeft = maps.split(",").length;
-        CheckMaps();
+        mapsLeft = maps.split(",").length;        
     }
 });
-
-
-function CheckMaps()
-{
-    if(mapsLeft<2)
-    {
-        message.channel.send("Map Veto ended: Map is" + maps);
-        mapsLeft = 50;
-        allowBan=false;
-    }
-}
 
 
 client.on('message',message=> {

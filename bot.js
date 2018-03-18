@@ -12,11 +12,15 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
-
 client.on('message', message => {
     if (message.content.toLowerCase() === '!mapveto' || message.content.toLowerCase() === '!map veto') {
         message.reply('Enter !ActiveDutyVeto  OR  !PopflashVeto');
         mapsLeft = 50;
+    }
+});
+client.on('message', message => {
+    if (message.content.toLowerCase() === '!vetoServerCount') {
+        message.reply(client.servers);
     }
 });
 

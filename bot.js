@@ -20,7 +20,7 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (message.content === '!vetoServerCount') {
-        message.reply(client.servers);
+        message.reply(self.bot.servers.length);
     }
 });
 

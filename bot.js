@@ -8,9 +8,17 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if (message.content === '!startVeto' || message.content === '!resetVeto') {
+    if (message.content === '!ActiveDutyVeto') {
         message.reply('VetoStarting');
         maps = 'cobble, cache, inferno, mirage, nuke, overpass, train';
+    }
+});
+
+
+client.on('message', message => {
+    if (message.content === '!PopFlashVeto') {
+        message.reply('VetoStarting');
+        maps = 'cobble, cache, inferno, mirage, nuke, overpass, train', 'subzero','canals','dust2';
     }
 });
 
@@ -76,13 +84,5 @@ client.on('message', message => {
 client.on('message',message=> {
     if(message.content === '!randomMap') {
      message.reply( items[Math.floor(Math.random()*items.length)] );
-    }
-});
-
-
-
-client.on('message', message => {
-    if (message.content.toLowerCase() === '!whatmaps') {
-        message.reply("Map Pool: Cobblestone, Cache, Inferno, Mirage, Nuke, Overpass, Train");
     }
 });

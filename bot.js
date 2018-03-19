@@ -22,7 +22,7 @@ client.on('message', message => {
 
 client.on('message', message => {
     if (message.content.toLowerCase() === '!mapsleft') {
-        message.reply("Maps left: "+maps + " ("+mapsLeft - 1+")");
+        message.reply("Maps left: "+maps + " ("+(mapsLeft - 1)+")");
     }
 });
 
@@ -40,7 +40,7 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content.toLowerCase() === '!popflashveto') {
         maps = 'subzero, dust2, canals, cobble, cache, inferno, mirage, nuke, overpass, train';
-        message.reply('Popflash Map Veto starting: Type !veto MapNam to ban any of the following maps: ' + maps);
+        message.reply('Popflash Map Veto starting: Type !veto MapName to ban any of the following maps: ' + maps);
         mapsLeft = maps.split(",").length;
         allowBan=true;
     }
@@ -51,7 +51,7 @@ client.on('message', message => {
         maps = maps.replace('cobble, ', '');
         message.reply('Cobblestone removed. Maps left: ' + maps);
         mapsLeft = maps.split(",").length;
-        if(mapsLeft==1)
+        if(mapsLeft==2)
         {
             message.reply("Map left: " + maps);
         }
@@ -63,7 +63,7 @@ client.on('message', message => {
         maps = maps.replace('cache, ', '');
         mapsLeft = maps.split(",").length;
         message.reply('Cache removed. Maps left: ' + maps);
-        if(mapsLeft==1)
+        if(mapsLeft==2)
         {
             message.reply("Map left: " + maps);
         }
@@ -75,7 +75,7 @@ client.on('message', message => {
         maps = maps.replace('mirage, ', '');
         mapsLeft = maps.split(",").length;
         message.reply('Mirage removed. Maps left: ' + maps);
-        if(mapsLeft==1)
+        if(mapsLeft==2)
         {
             message.reply("Map left: " + maps);
         }
@@ -88,7 +88,7 @@ client.on('message', message => {
         maps = maps.replace('nuke, ', '');
         message.reply('Nuke removed. Maps left: ' + maps);
         mapsLeft = maps.split(",").length;
-        if(mapsLeft==1)
+        if(mapsLeft==2)
         {
             message.reply("Map left: " + maps);
         }
@@ -102,7 +102,7 @@ client.on('message', message => {
         maps = maps.replace('overpass, ', '');
         message.reply('Overpass removed. Maps left: ' + maps);
         mapsLeft = maps.split(",").length;
-        if(mapsLeft==1)
+        if(mapsLeft==2)
         {
             message.reply("Map left: " + maps);
         }
@@ -115,7 +115,7 @@ client.on('message', message => {
         maps = maps.replace('train', '');
         message.reply('Train removed. Maps left: ' + maps);
         mapsLeft = maps.split(",").length;
-        if(mapsLeft==1)
+        if(mapsLeft==2)
         {
             message.reply("Map left: " + maps);
         }
@@ -128,7 +128,7 @@ client.on('message', message => {
         maps = maps.replace('inferno, ', '');
         message.reply('Inferno removed. Maps left: ' + maps);
         mapsLeft = maps.split(",").length;
-        if(mapsLeft==1)
+        if(mapsLeft==2)
         {
             message.reply("Map left: " + maps);
         }
@@ -141,7 +141,7 @@ client.on('message', message => {
         maps = maps.replace('canals, ', '');
         message.reply('Canals removed. Maps left: ' + maps);
         mapsLeft = maps.split(",").length;
-        if(mapsLeft==1)
+        if(mapsLeft==2)
         {
             message.reply("Map left: " + maps);
         }
@@ -153,7 +153,7 @@ client.on('message', message => {
         maps = maps.replace('subzero, ', '');
         message.reply('Subzero removed. Maps left: ' + maps);
         mapsLeft = maps.split(",").length;
-        if(mapsLeft==1)
+        if(mapsLeft==2)
         {
             message.reply("Map left: " + maps);
         }
@@ -166,7 +166,7 @@ client.on('message', message => {
         maps = maps.replace('dust2, ', '');
         message.reply('Dust 2 removed. Maps left: ' + maps);
         mapsLeft = maps.split(",").length;
-        if(mapsLeft==1)
+        if(mapsLeft==2)
         {
             message.reply("Map left: " + maps);
         }
@@ -177,10 +177,11 @@ client.on('message', message => {
         maps = maps.replace('dust2, ', '');
         message.reply('Dust 2 removed. Maps left: ' + maps);
         mapsLeft = maps.split(",").length;
-        if(mapsLeft==1)
+        if(mapsLeft==2)
         {
             message.reply("Map left: " + maps);
         }
+       
     }
 });
 

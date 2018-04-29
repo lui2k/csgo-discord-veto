@@ -2,9 +2,9 @@
 "name":"Test",
 "description":"Test",
 "version":"0.0.0",
-"main":"bot2.js",
+"main":"bot.js",
 "scripts": {
-  "start":"node bot2.js"
+  "start":"node bot.js"
  },
  "dependencies": {
     "discord.js":"11.1.0"

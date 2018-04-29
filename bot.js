@@ -233,5 +233,6 @@ client.on('message',message=> {
     if(message.content.toLowerCase() === '!randompopflashmap' || message.content.toLowerCase() === '!random popflash map' ) {
      message.reply( PFitems[Math.floor(Math.random()*PFitems.length)] );
     }
-
+});
+    
 client.login(process.env.BOT_TOKEN);

@@ -4,7 +4,7 @@ var maps;
 var mapsLeft;
 var allowBan = false;
 
-var items = ['cache','cobble','inferno','mirage','nuke','overpass','train'];
+var items = ['cache','dust2','inferno','mirage','nuke','overpass','train'];
 var PFitems = ['cache','cobble','inferno','mirage','nuke','overpass','train','subzero','dust2','canals'];
 
 

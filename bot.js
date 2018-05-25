@@ -11,6 +11,11 @@ var bestOfSelected = false;
 var bestOf;
 
 
+client.on('ready', () => {
+	client.user.setGame("vetoes for CS:GO");
+	client.user.setStatus("busy");
+});
+
 
 client.on('message', message => {
     if (message.content.toLowerCase() === '!mapveto' || message.content.toLowerCase() === '!map veto'  || message.content.toLowerCase() === '!veto') {
@@ -25,8 +30,8 @@ client.on('message', message => {
     if (message.content.toLowerCase() === '!veto bestofone' && !allowBan && !bestOfSelected) {
       bestOf = 1;
       bestOfSelected=true;
-      message.reply('Enter !ActiveDutyVeto  OR  !PopflashVeto for a best of ' + bestOf + " match.");
-	  allowBan=false;
+	    message.reply('Enter !Veto ActiveDuty  OR  !Veto Popflash for a best of ' + bestOf + "match.");
+	    allowBan=false;
     }
 });
 

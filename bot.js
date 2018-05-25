@@ -14,16 +14,8 @@ var bestOf;
 
 client.on("ready", () => {
   console.log("Ready");
-  client.user.setActivity("Type !help");
-}
-	  
-	  
-	client.on("message",message => {
-	if (message.content.toLowerCase() === '!veto botstats') {
-	message.reply("This veto bot is connected to "+ client.servers.length + ". Thank you for using the CSGO Veto Bot!");
-    }
-	  });
-
+  client.user.setActivity("Type !mapveto");
+});
 
 
 client.on('message', message => {
@@ -84,7 +76,8 @@ client.on('message', message => {
 //BOT HELP CMD
 client.on('message', message => {
     if (message.content.toLowerCase() === '!veto help') {
-        message.reply("Need help with the Veto Bot? Visit http://csgoscrims.co.uk/discordBot.html");
+	    message.reply("Need help with the Veto Bot? Visit http://csgoscrims.co.uk/discordBot.html");
+	    message.reply("\n This veto bot is connected to "+ client.servers.length + ". Thank you for using the CSGO Veto Bot!");
     }
 });
 

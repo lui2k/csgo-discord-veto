@@ -24,7 +24,7 @@ client.on('message', message => {
 client.on('message', message=> {
 	if(message.content.toLowerCase() === '!veto flipcoin' || message.content.toLowerCase() === '!veto flipacoin')
 	{
-		message.reply('The coin has landed on '+ pickSide[Math.floor(Math.random()*pickSide.length)] + '.');
+		message.reply('the coin has landed on '+ pickSide[Math.floor(Math.random()*pickSide.length)] + '.');
 	}
 });
 

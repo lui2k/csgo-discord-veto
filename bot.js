@@ -10,14 +10,9 @@ var allowBan = false;
 var bestOfSelected = false;
 var bestOf;
 
-
-client.on('ready', () => {
-	client.user.setGame("vetoes for CS:GO");
-	client.user.setStatus("busy");
-	
-	var channel = client.channels.get("name","general").id;
-	client.channels.get("id",channel).sendMessage("We have updated the CSGO Discord Bot and it should work find. Apologies for issues. Contact Lui2k#3225 with issues/ideas.");
-});
+client.user.setActivity('Map Vetos', { type: 'WATCHING' })
+  .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
+  .catch(console.error);
 
 
 client.on('message', message => {

@@ -26,6 +26,7 @@ client.on('message', message => {
       bestOf = 1;
       bestOfSelected=true;
       message.reply('Enter !ActiveDutyVeto  OR  !PopflashVeto for a best of ' + bestOf + " match.");
+	  allowBan=false;
     }
 });
 
@@ -34,6 +35,7 @@ client.on('message', message => {
       bestOf = 3;
       bestOfSelected=true;
       message.reply('Enter !Veto ActiveDuty  OR  !Veto Popflash for a best of ' + bestOf + "match.");
+	  allowBan=false;
     }
 });
 

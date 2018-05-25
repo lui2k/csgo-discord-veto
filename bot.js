@@ -16,6 +16,7 @@ client.on('message', message => {
     if (message.content.toLowerCase() === '!mapveto' || message.content.toLowerCase() === '!map veto'  || message.content.toLowerCase() === '!veto') {
         message.reply('Enter !veto bestOfOne  OR  !veto bestOfThree');
         mapsLeft = 50;
+		bestOfSelected=false;
     }
 });
 

@@ -11,26 +11,19 @@ var bestOfSelected = false;
 var bestOf;
 
 
-
-client.on("ready", () => {
-  console.log("Ready");
-  client.user.setActivity("Type !mapveto");
-});
-
-
 client.on('message', message => {
-    if (message.content.toLowerCase() === '!mapveto' || message.content.toLowerCase() === '!map veto'  || message.content.toLowerCase() === '!veto') {
-        message.reply('Enter !veto bestOfOne  OR  !veto bestOfThree');
-        mapsLeft = 50;
-	    bestOfSelected=false;
-    }
+	if (message.content.toLowerCase() === '!mapveto' || message.content.toLowerCase() === '!map veto'  || message.content.toLowerCase() === '!veto') {
+		message.reply('Enter !veto bestOfOne  OR  !veto bestOfThree');
+		mapsLeft = 50;
+		bestOfSelected=false;
+	}
 });
 
 
 client.on('message', message => {
     if (message.content.toLowerCase() === '!veto bestofone' && !allowBan && !bestOfSelected) {
-      bestOf = 1;
-      bestOfSelected=true;
+	    bestOf = 1;
+	    bestOfSelected=true;
 	    message.reply('Enter !Veto ActiveDuty  OR  !Veto Popflash for a best of ' + bestOf + "match.");
 	    allowBan=false;
     }
@@ -38,10 +31,10 @@ client.on('message', message => {
 
 client.on('message', message => {
     if (message.content.toLowerCase() === '!veto bestofthree' && !allowBan && !bestOfSelected) {
-      bestOf = 3;
-      bestOfSelected=true;
-      message.reply('Enter !Veto ActiveDuty  OR  !Veto Popflash for a best of ' + bestOf + "match.");
-	  allowBan=false;
+	    bestOf = 3;
+	    bestOfSelected=true;
+	    message.reply('Enter !Veto ActiveDuty  OR  !Veto Popflash for a best of ' + bestOf + "match.");
+	    allowBan=false;
     }
 });
 
@@ -57,27 +50,25 @@ client.on('message', message => {
 
 client.on('message', message => {
     if (message.content.toLowerCase() === '!veto popflash'  && !allowBan && bestOfSelected) {
-        maps = 'subzero, dust2, canals, cobble, cache, inferno, mirage, nuke, overpass, train';
-        message.reply('Popflash Map Veto starting: Type !veto MapName to ban any of the following maps: ' + maps);
-        mapsLeft = 10; 
-        allowBan=true;
+	    maps = 'subzero, dust2, canals, cobble, cache, inferno, mirage, nuke, overpass, train';
+	    message.reply('Popflash Map Veto starting: Type !veto MapName to ban any of the following maps: ' + maps);
+	    mapsLeft = 10; 
+	    allowBan=true;
     }
 });
 
 
 //MAPS LEFT CMD
 client.on('message', message => {
-    if (message.content.toLowerCase() === '!mapsleft' && allowBan) {
-        message.reply("Maps left: "+maps + " ("+(mapsLeft - 1)+")");
-    }
+	if (message.content.toLowerCase() === '!mapsleft' && allowBan) {
+		message.reply("Maps left: "+maps + " ("+(mapsLeft - 1)+")");
+	}
 });
-
 
 //BOT HELP CMD
 client.on('message', message => {
     if (message.content.toLowerCase() === '!veto help') {
 	    message.reply("Need help with the Veto Bot? Visit http://csgoscrims.co.uk/discordBot.html");
-	    message.reply("\n This veto bot is connected to "+ client.servers.length + ". Thank you for using the CSGO Veto Bot!");
     }
 });
 

@@ -16,6 +16,7 @@ client.on('message', message => {
 		message.reply('Enter !veto bestOfOne  OR  !veto bestOfThree');
 		mapsLeft = 50;
 		bestOfSelected=false;
+		allowBan =false;
 	}
 });
 
@@ -24,8 +25,8 @@ client.on('message', message => {
     if (message.content.toLowerCase() === '!veto bestofone' && !allowBan && !bestOfSelected) {
 	    bestOf = 1;
 	    bestOfSelected=true;
+	    allowBan =false;
 	    message.reply('Enter !Veto ActiveDuty  OR  !Veto Popflash for a best of ' + bestOf + "match.");
-	    allowBan=false;
     }
 });
 
@@ -33,8 +34,8 @@ client.on('message', message => {
     if (message.content.toLowerCase() === '!veto bestofthree' && !allowBan && !bestOfSelected) {
 	    bestOf = 3;
 	    bestOfSelected=true;
+	    allowBan =false;
 	    message.reply('Enter !Veto ActiveDuty  OR  !Veto Popflash for a best of ' + bestOf + "match.");
-	    allowBan=false;
     }
 });
 

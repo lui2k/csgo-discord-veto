@@ -10,6 +10,22 @@ var allowBan = false;
 var bestOfSelected = false;
 var bestOf;
 
+
+
+client.on("ready", () => {
+  console.log("Ready");
+  client.user.setActivity("Type !help");
+}
+	  
+	  
+	client.on("message",message => {
+	if (message.content.toLowerCase() === '!veto botstats') {
+	message.reply("This veto bot is connected to "+ client.servers.length + ". Thank you for using the CSGO Veto Bot!");
+    }
+	  });
+
+
+
 client.on('message', message => {
     if (message.content.toLowerCase() === '!mapveto' || message.content.toLowerCase() === '!map veto'  || message.content.toLowerCase() === '!veto') {
         message.reply('Enter !veto bestOfOne  OR  !veto bestOfThree');

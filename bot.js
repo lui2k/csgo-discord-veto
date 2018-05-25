@@ -69,7 +69,7 @@ client.on('message', message => {
 //BOT HELP CMD
 client.on('message', message => {
     if (message.content.toLowerCase() === '!veto help') {
-	    message.reply("Need help with the Veto Bot? Visit http://csgoscrims.co.uk/discordBot.html");
+	    message.reply("Need help with the Veto Bot? Visit http://csgoscrims.co.uk/discordBot.html or contact the developer: Lui2k#3225 ");
     }
 });
 

@@ -3,6 +3,7 @@ const client = new Discord.Client();
 
 var items = ['cache','dust2','inferno','mirage','nuke','overpass','train'];
 var PFitems = ['cache','cobble','inferno','mirage','nuke','overpass','train','subzero','dust2','canals'];
+var pickSide = ['heads','tails'];
 var user;
 var maps;
 var mapsLeft;
@@ -17,6 +18,13 @@ client.on('message', message => {
 		mapsLeft = 50;
 		bestOfSelected=false;
 		allowBan =false;
+	}
+});
+
+client.on('message', message=> {
+	if(message.content.toLowerCase() === '!veto flipcoin' || message.content.toLowerCase() === '!veto flipacoin')
+	{
+		message.reply('The coin has landed on '+ pickSide[Math.floor(Math.random()*pickSide.length)] + '.');
 	}
 });
 

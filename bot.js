@@ -118,7 +118,9 @@ client.on('message', message => {
         message.reply('Mirage removed. Maps left: ' + maps);
         if(mapsLeft==bestOf)
         {
-            message.reply("you will play on " + maps + " (BO" + bestOf + "). Good luck, have fun!" );
+		message.reply("you will play on " + maps + " (BO" + bestOf + "). Good luck, have fun!",   {
+			file: "https://vignette.wikia.nocookie.net/cswikia/images/a/a7/CSGO_de_Mirage.jpg"
+		});
             allowBan=false;
             bestOfSelected=false;
         }

@@ -11,12 +11,6 @@ var allowBan = false;
 var bestOfSelected = false;
 var bestOf;
 
-client.on("ready", () => 
-  console.log("Ready");
-  client.user.setActivity("Type !veto");
-}
-
-
 client.on('message', message => {
 	if (message.content.toLowerCase() === '!mapveto' || message.content.toLowerCase() === '!map veto'  || message.content.toLowerCase() === '!veto') {
 		message.reply('Enter !veto bo1  OR  !veto bo3  OR  !veto popflash pug');

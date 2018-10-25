@@ -11,9 +11,9 @@ var allowBan = false;
 var bestOfSelected = false;
 var bestOf;
 
-bot.on("ready", () => {
+client.on("ready", () => 
   console.log("Ready");
-  bot.user.setActivity("Type !veto");
+  client.user.setActivity("Type !veto");
 }
 
 

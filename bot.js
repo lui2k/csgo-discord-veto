@@ -11,6 +11,11 @@ var allowBan = false;
 var bestOfSelected = false;
 var bestOf;
 
+bot.on("ready", () => {
+  console.log("Ready");
+  bot.user.setActivity("Type !veto");
+}
+
 
 client.on('message', message => {
 	if (message.content.toLowerCase() === '!mapveto' || message.content.toLowerCase() === '!map veto'  || message.content.toLowerCase() === '!veto') {

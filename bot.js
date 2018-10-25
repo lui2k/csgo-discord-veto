@@ -14,10 +14,21 @@ var bestOf;
 
 client.on('message', message => {
 	if (message.content.toLowerCase() === '!mapveto' || message.content.toLowerCase() === '!map veto'  || message.content.toLowerCase() === '!veto') {
-		message.reply('Enter !veto bestOfOne  OR  !veto bestOfThree');
+		message.reply('Enter !veto bo1  OR  !veto bo3  OR  !veto popflash pug');
 		mapsLeft = 50;
 		bestOfSelected=false;
 		allowBan =false;
+	}
+});
+
+client.on('message', message => {
+	if (message.content.toLowerCase() === '!veto popflash pug' && !allowBan && !bestOfSelected) {
+		bestOf = 1;
+		bestOfSelected=true;
+		maps = 'subzero, dust2, canals, cobble, cache, inferno, mirage, nuke, overpass, train';
+	    	message.reply('PUG Map Veto starting: Type !veto MapName to ban any of the following maps: ' + maps);
+	    	mapsLeft = 10; 
+	    	allowBan=true;
 	}
 });
 
@@ -30,7 +41,7 @@ client.on('message', message=> {
 
 
 client.on('message', message => {
-    if (message.content.toLowerCase() === '!veto bestofone' && !allowBan && !bestOfSelected) {
+    if (message.content.toLowerCase() === '!veto bo1' && !allowBan && !bestOfSelected) {
 	    bestOf = 1;
 	    bestOfSelected=true;
 	    allowBan =false;
@@ -39,7 +50,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-    if (message.content.toLowerCase() === '!veto bestofthree' && !allowBan && !bestOfSelected) {
+    if (message.content.toLowerCase() === '!veto bo3' && !allowBan && !bestOfSelected) {
 	    bestOf = 3;
 	    bestOfSelected=true;
 	    allowBan =false;

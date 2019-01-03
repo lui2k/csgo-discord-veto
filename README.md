@@ -1,3 +1,5 @@
+This is a minor rewrite (branch) from https://github.com/lui2k/csgo-discord-veto to allow for custom map groups when running veto bot. All credit to lui2k.
+
 # csgo-discord-veto
 This is a new Discord bot that allows users to perform Vetos for Best-Of-One maps. <br />
 [Click to add to your Server](https://discordapp.com/api/oauth2/authorize?client_id=424955615631376384&permissions=2048&scope=bot)

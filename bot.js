@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-var items = ['cache','dust2','inferno','mirage','nuke','overpass','train'];
-var PFitems = ['cache','cobble','inferno','mirage','nuke','overpass','train','subzero','dust2','canals'];
+var items = ['vertigo','dust2','inferno','mirage','nuke','overpass','train'];
+var PFitems = ['cache','cobble','inferno','mirage','nuke','overpass','train','dust2','canals', 'abbey', 'zoo', 'vertigo'];
 var pickSide = ['heads','tails'];
 var user;
 var maps;
@@ -196,6 +196,21 @@ client.on('message', message => {
     }
 });
 
+client.on('message', message => {
+    if (message.content.toLowerCase() === '!veto vertigo' && maps.indexOf('vertigo')!= -1 &&allowBan) {
+        maps = maps.replace('vertigo, ', '');
+        message.reply('Vertigo removed. Maps left: ' + maps);
+        mapsLeft -= 1; 
+        if(mapsLeft==bestOf)
+        {
+            message.reply("you will play on " + maps + " (BO" + bestOf + "). Good luck, have fun!" );
+            allowBan=false;
+            bestOfSelected=false;
+        }
+    }
+});
+
+
 
 client.on('message', message => {
     if (message.content.toLowerCase() === '!veto canals' && maps.indexOf('canals')!= -1 &&allowBan) {
@@ -212,9 +227,9 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-    if (message.content.toLowerCase() === '!veto subzero' && maps.indexOf('subzero')!= -1 &&allowBan) {
-        maps = maps.replace('subzero, ', '');
-        message.reply('Subzero removed. Maps left: ' + maps);
+    if (message.content.toLowerCase() === '!veto abbey' && maps.indexOf('abbey')!= -1 &&allowBan) {
+        maps = maps.replace('abbey, ', '');
+        message.reply('Abbey removed. Maps left: ' + maps);
         mapsLeft -= 1; 
         if(mapsLeft==bestOf)
         {
@@ -225,6 +240,22 @@ client.on('message', message => {
         
     }
 });
+
+client.on('message', message => {
+    if (message.content.toLowerCase() === '!veto zoo' && maps.indexOf('zoo')!= -1 &&allowBan) {
+        maps = maps.replace('zoo, ', '');
+        message.reply('Zoo removed. Maps left: ' + maps);
+        mapsLeft -= 1; 
+        if(mapsLeft==bestOf)
+        {
+            message.reply("you will play on " + maps + " (BO" + bestOf + "). Good luck, have fun!" );
+            allowBan=false;
+            bestOfSelected=false;
+        }
+        
+    }
+});
+
 
 client.on('message', message => {
     if (message.content.toLowerCase() === '!veto dust2' && maps.indexOf('dust2')!= -1 &&allowBan) {
@@ -239,6 +270,9 @@ client.on('message', message => {
         }
     }
 });
+
+
+
 
 
 client.on('message',message=> {

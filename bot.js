@@ -24,7 +24,7 @@ client.on('message', message => {
 	if (message.content.toLowerCase() === '!veto popflash pug' && !allowBan && !bestOfSelected) {
 		bestOf = 1;
 		bestOfSelected=true;
-		maps = 'subzero, dust2, canals, cobble, cache, inferno, mirage, nuke, overpass, train';
+		maps = 'dust2, cache, inferno, overpass, cobble, mirage, train, nuke, canals, biome, zoo, abbey, vertigo';
 	    	message.reply('PUG Map Veto starting: Type !veto MapName to ban any of the following maps: ' + maps);
 	    	mapsLeft = 10; 
 	    	allowBan=true;
@@ -60,7 +60,7 @@ client.on('message', message => {
 
 client.on('message', message => {
     if (message.content.toLowerCase() === '!veto activeduty' && !allowBan && bestOfSelected) {
-        maps = 'cache, dust2, inferno, mirage, nuke, overpass, train';
+        maps = 'dust2, inferno, mirage, nuke, overpass, train, vertigo';
         message.reply('Active Duty Map Veto starting: Type !veto MapName to ban any of the following maps: ' + maps);
         mapsLeft = 7; 
         allowBan=true;
@@ -69,7 +69,7 @@ client.on('message', message => {
 
 client.on('message', message => {
     if (message.content.toLowerCase() === '!veto popflash'  && !allowBan && bestOfSelected) {
-	    maps = 'subzero, dust2, canals, cobble, cache, inferno, mirage, nuke, overpass, train';
+	    maps = 'dust2, cache, inferno, overpass, cobble, mirage, train, nuke, canals, biome, zoo, abbey, vertigo';
 	    message.reply('Popflash Map Veto starting: Type !veto MapName to ban any of the following maps: ' + maps);
 	    mapsLeft = 10; 
 	    allowBan=true;
@@ -112,6 +112,20 @@ client.on('message', message => {
         maps = maps.replace('cache, ', '');
         mapsLeft -= 1; 
         message.reply('Cache removed. Maps left: ' + maps);
+        if(mapsLeft==bestOf)
+        {
+            message.reply("you will play on " + maps + " (BO" + bestOf + "). Good luck, have fun!" );
+            allowBan=false;
+            bestOfSelected=false;
+        }
+    }
+});
+
+client.on('message', message => {
+    if (message.content.toLowerCase() === '!veto canals' && maps.indexOf('canals')!= -1 && allowBan) {
+        maps = maps.replace('canals, ', '');
+        mapsLeft -= 1; 
+        message.reply('Canals removed. Maps left: ' + maps);
         if(mapsLeft==bestOf)
         {
             message.reply("you will play on " + maps + " (BO" + bestOf + "). Good luck, have fun!" );
@@ -261,6 +275,20 @@ client.on('message', message => {
     if (message.content.toLowerCase() === '!veto dust2' && maps.indexOf('dust2')!= -1 &&allowBan) {
         maps = maps.replace('dust2, ', '');
         message.reply('Dust 2 removed. Maps left: ' + maps);
+        mapsLeft -= 1; 
+        if(mapsLeft==bestOf)
+        {
+            message.reply("you will play on " + maps + " (BO" + bestOf + "). Good luck, have fun!" );
+            allowBan=false;
+            bestOfSelected=false;
+        }
+    }
+});
+
+client.on('message', message => {
+    if (message.content.toLowerCase() === '!veto biome' && maps.indexOf('biome')!= -1 &&allowBan) {
+        maps = maps.replace('biome, ', '');
+        message.reply('Biome removed. Maps left: ' + maps);
         mapsLeft -= 1; 
         if(mapsLeft==bestOf)
         {

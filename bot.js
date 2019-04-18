@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 var activeMaps = ['vertigo', 'dust2', 'inferno', 'mirage', 'nuke', 'overpass', 'train'];
-var allMaps = ['cache', 'cobble', 'inferno', 'mirage', 'nuke', 'overpass', 'train', 'subzero', 'dust2', 'canals'];
+var allMaps = ['cache', 'cobble', 'inferno', 'mirage', 'nuke', 'overpass', 'train', 'vertigo', 'dust2', 'canals', 'zoo', 'biome' 'abbey'];
 var pickSide = ['heads', 'tails'];
 var mapPool = [];
 var allowBan = false;
@@ -56,7 +56,7 @@ client.on('message', message => {
         message.reply("Maps left: " + mapPool + " (" + (mapPool.length - 1) + ")");
     }
     else if (message.content.toLowerCase() === '!veto help') {
-        message.reply("Need help with the Veto Bot? Visit http://csgoscrims.co.uk/discordBot.html or contact the developer: Lui2k#3225 ");
+        message.reply("Need help with the Veto Bot? Visit https://github.com/lui2k/csgo-discord-veto or contact the developer: Lui2k#3225 ");
     }
     else if (message.content.toLowerCase() === '!randommap' || message.content.toLowerCase() === '!random map') {
         message.reply(activeMaps[Math.floor(Math.random() * activeMaps.length)]);

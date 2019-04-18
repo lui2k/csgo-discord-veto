@@ -17,5 +17,5 @@ Thanks to [Jezternz](https://github.com/Jezternz/) for fixes and adjustments.
   
   
 # Current Maps (Updated 18-Apr-2019):
-Active Duty: Dust 2, Inferno, Mirage, Nuke, Overpass, Train, Vertigo  (18-Mar-2018) <br />
-Popflash: Dust2, Inferno, Mirage, Nuke, Overpass, Train, Vertigo, Cache, Cobblestone, Canals, Zoo, Biome, Abbey. (18-Mar-2018) <br />
+Active Duty: Dust 2, Inferno, Mirage, Nuke, Overpass, Train, Vertigo<br />
+Popflash: Dust2, Inferno, Mirage, Nuke, Overpass, Train, Vertigo, Cache, Cobblestone, Canals, Zoo, Biome, Abbey.

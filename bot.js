@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 var activeMaps = ['vertigo', 'dust2', 'inferno', 'mirage', 'nuke', 'overpass', 'train'];
-var allMaps = ['cache', 'cobble', 'inferno', 'mirage', 'nuke', 'overpass', 'train', 'vertigo', 'dust2', 'canals', 'zoo', 'biome' 'abbey'];
+var allMaps = ['cache', 'cobble', 'inferno', 'mirage', 'nuke', 'overpass', 'train', 'vertigo', 'dust2', 'canals', 'zoo', 'biome', 'abbey'];
 var pickSide = ['heads', 'tails'];
 var mapPool = [];
 var allowBan = false;

@@ -3,6 +3,7 @@ const client = new Discord.Client();
 
 var activeMaps = ['vertigo', 'dust2', 'inferno', 'mirage', 'nuke', 'overpass', 'train'];
 var allMaps = ['cache', 'cobble', 'inferno', 'mirage', 'nuke', 'overpass', 'train', 'vertigo', 'dust2', 'canals', 'zoo', 'biome', 'abbey'];
+var jbmevidroTournamentMaps = ['2towers', 'caribbean_dolnma', 'crashz_dust_v2', 'desert2', 'dust2', 'grass2','nuke2020', 'poolparty', 'ramps_lego', 'redline'];
 var pickSide = ['heads', 'tails'];
 var mapPool = [];
 var allowBan = false;
@@ -29,7 +30,7 @@ client.on('message', message => {
         bestOf = 1;
         bestOfSelected = true;
         allowBan = false;
-        message.reply('Enter !Veto ActiveDuty  OR  !Veto Popflash for a best of ' + bestOf + "match.");
+        message.reply('Enter !Veto ActiveDuty OR !Veto Popflash OR !veto JB.MEVID.RO for a best of ' + bestOf + "match.");
     }
     else if (message.content.toLowerCase() === '!veto bo3' && !allowBan && !bestOfSelected) {
         bestOf = 3;
@@ -47,9 +48,14 @@ client.on('message', message => {
         message.reply('Popflash Map Veto starting: Type !veto MapName to ban any of the following maps: ' + mapPool);
         allowBan = true;
     }
+    else if (message.content.toLowerCase() === '!veto jb.mevid.ro' && !allowBan && bestOfSelected) {
+        mapPool = jbmevidroTournamentMaps.slice(0);
+        message.reply('Map Veto starting for Tournament 1v1 JB.MEVID.RO: Type !veto MapName to ban any of the following maps: ' + mapPool);
+        allowBan = true;
+    }
     else if (message.content.toLowerCase().indexOf('!veto maplist') === 0 && !allowBan && bestOfSelected) {
         mapPool = message.content.slice(13).split(',').map(function (m) { return m.toLowerCase().trim(); });
-        message.reply('Popflash Map Veto starting: Type !veto MapName to ban any of the following maps: ' + mapPool);
+        message.reply('Map list:' + mapPool);
         allowBan = true;
     }
     else if (message.content.toLowerCase() === '!mapsleft' && allowBan) {
